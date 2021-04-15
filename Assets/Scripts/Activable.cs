@@ -27,7 +27,7 @@ public class Activable : MonoBehaviour
     private Coroutine currentCoroutine;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (TryGetComponent(out m_renderer)){
             m_initialColor = m_renderer.material.color;

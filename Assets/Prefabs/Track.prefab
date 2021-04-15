@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6551057976815974415}
   - component: {fileID: 6551057976815974412}
   - component: {fileID: 6551057976815974409}
+  - component: {fileID: -5096929833566086394}
   m_Layer: 0
   m_Name: Track
   m_TagString: Untagged
@@ -112,3 +113,16 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 5592407
   m_delay: 1
+--- !u!114 &-5096929833566086394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551057976815974450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9104a7fa5a7394891ee27c5ef0616c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_buttonPrefab: {fileID: 9070786230177062553, guid: f7162ce17a6b39b40aef80317122937b, type: 3}

@@ -35,7 +35,7 @@ public class Track : MonoBehaviour
         m_prefabOffset.x = (m_renderer.bounds.min.x / 2) + (m_renderer.bounds.max.x / 2);
         m_prefabOffset.y += m_buttonPrefab.GetComponent<MeshRenderer>().bounds.max.y;
 
-        GenerateNote();
+        BeatGenerator.Instance.OnBeat += GenerateNote;
 
     }
 
@@ -45,7 +45,7 @@ public class Track : MonoBehaviour
         
     }
 
-    private void GenerateNote()
+    private void GenerateNote(object sender, System.EventArgs e)
     {
         if (IsActivated())
         {

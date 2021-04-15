@@ -1,0 +1,52 @@
+{
+    "name": "PlayerInputsController",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "e1abd47d-28c1-46ef-a2a2-7808c6a94e4b",
+            "actions": [
+                {
+                    "name": "Track1",
+                    "type": "PassThrough",
+                    "id": "caf72f65-ab29-41ec-9475-5ba9bf4e73fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Track2",
+                    "type": "Button",
+                    "id": "749476cc-9198-438b-b5a6-96218b093239",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a1335d09-3458-4835-afc4-0f29541d2f62",
+                    "path": "<Keyboard>/#(A)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Track1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f4f393f-d8c1-4523-bca3-fdb3d23ddb49",
+                    "path": "<Keyboard>/#(Z)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Track2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

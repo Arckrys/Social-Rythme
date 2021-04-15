@@ -27,6 +27,7 @@ public class PlayerActions : MonoBehaviour
         m_playerInputsController.Default.Track1.performed += ctx => PressTrackOne();
     }
 
+    //Cette fonction est appelée quand on appuie sur une touche bind à l'action Track1
     private void PressTrackOne()
     {
         Debug.Log("Track one pressed");

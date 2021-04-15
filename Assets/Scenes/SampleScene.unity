@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 607744803}
   - component: {fileID: 607744802}
   - component: {fileID: 607744801}
+  - component: {fileID: 607744804}
   m_Layer: 0
   m_Name: Track1
   m_TagString: Untagged
@@ -218,6 +219,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607744799}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &607744804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607744799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b095b39b62a9344d99cdce789612db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deactivatedColor:
+    serializedVersion: 2
+    rgba: 8224125
+  m_delay: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +340,7 @@ GameObject:
   - component: {fileID: 799480901}
   - component: {fileID: 799480900}
   - component: {fileID: 799480899}
+  - component: {fileID: 799480902}
   m_Layer: 0
   m_Name: Track2
   m_TagString: Untagged
@@ -406,6 +424,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799480897}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &799480902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799480897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b095b39b62a9344d99cdce789612db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deactivatedColor:
+    serializedVersion: 2
+    rgba: 8224125
+  m_delay: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +636,7 @@ GameObject:
   - component: {fileID: 1271916601}
   - component: {fileID: 1271916600}
   - component: {fileID: 1271916599}
+  - component: {fileID: 1271916602}
   m_Layer: 0
   m_Name: Track4
   m_TagString: Untagged
@@ -685,6 +720,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271916597}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1271916602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271916597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b095b39b62a9344d99cdce789612db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deactivatedColor:
+    serializedVersion: 2
+    rgba: 8224125
+  m_delay: 1
 --- !u!1 &1597017358
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +843,7 @@ GameObject:
   - component: {fileID: 1971895298}
   - component: {fileID: 1971895297}
   - component: {fileID: 1971895296}
+  - component: {fileID: 1971895299}
   m_Layer: 0
   m_Name: Track3
   m_TagString: Untagged
@@ -875,6 +927,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971895294}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1971895299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971895294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b095b39b62a9344d99cdce789612db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deactivatedColor:
+    serializedVersion: 2
+    rgba: 8224125
+  m_delay: 1
 --- !u!1 &2120595875
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +955,7 @@ GameObject:
   - component: {fileID: 2120595879}
   - component: {fileID: 2120595878}
   - component: {fileID: 2120595877}
+  - component: {fileID: 2120595880}
   m_Layer: 0
   m_Name: Track5
   m_TagString: Untagged
@@ -970,3 +1039,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120595875}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2120595880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120595875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b095b39b62a9344d99cdce789612db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deactivatedColor:
+    serializedVersion: 2
+    rgba: 8224125
+  m_delay: 1

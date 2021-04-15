@@ -29,7 +29,7 @@ public class Activable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (TryGetComponent<MeshRenderer>(out m_renderer)){
+        if (TryGetComponent(out m_renderer)){
             m_initialColor = m_renderer.material.color;
             m_deactivatedColor = Color32.Lerp(m_initialColor, m_deactivatedFilter, 0.8f);
             IsActivated = false;

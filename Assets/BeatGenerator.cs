@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class BeatGenerator : MonoBehaviour
 {
-
+    //Le BPM général de la musique utilisée
     [SerializeField] float Bpm;
 
+    //Cet event est appelé à chaque Beat , donc toutes les 60/BPM secondes
     public event EventHandler OnBeat;
+
+    //Le timeStamp correspondant au prochain appel de OnBeat
     private float m_nextBeat;
 
 
@@ -30,13 +33,11 @@ public class BeatGenerator : MonoBehaviour
     }
     /* END OF SINGLETON */
 
-    // Start is called before the first frame update
     void Start()
     {
         m_nextBeat = Time.time + (60.0f / Bpm);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Time.time >= m_nextBeat)

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-
+    // Est-ce que ce Track est activé au début du jeu ?
     [SerializeField] private bool m_isActivatedByDefault = false;
 
+    //Le prefab de la note qui sera placée sur le Track
     [SerializeField] private GameObject m_buttonPrefab;
+    //L'offset de la note pour mieux la placer sur le Track
     private Vector3 m_prefabOffset;
 
     private Activable m_activableScript;
@@ -19,7 +21,6 @@ public class Track : MonoBehaviour
     private MeshRenderer m_renderer;
 
 
-    // Start is called before the first frame update
     private void Awake()
     {
         m_activableScript = GetComponent<Activable>();
@@ -31,20 +32,17 @@ public class Track : MonoBehaviour
     {
         m_activableScript.IsActivated = m_isActivatedByDefault;
 
+        //On calcule la position de départ des notes en fonction du renderer de la Track
         m_prefabOffset = m_renderer.bounds.max;
         m_prefabOffset.x = (m_renderer.bounds.min.x / 2) + (m_renderer.bounds.max.x / 2);
         m_prefabOffset.y += m_buttonPrefab.GetComponent<MeshRenderer>().bounds.max.y;
 
+        //Quand OnBeat (voir BeatGenerator) est activé, la fonction GeneraNote est lancée
         BeatGenerator.Instance.OnBeat += GenerateNote;
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //On instancie une note sur la track
     private void GenerateNote(object sender, System.EventArgs e)
     {
         if (IsActivated())

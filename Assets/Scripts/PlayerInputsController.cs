@@ -33,6 +33,30 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Track3"",
+                    ""type"": ""Button"",
+                    ""id"": ""967861c0-7802-44ea-b2a8-b57db1b1fc91"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Track4"",
+                    ""type"": ""Button"",
+                    ""id"": ""e0723d2a-9fea-4a7d-8ccc-eb9d63e26e37"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Track5"",
+                    ""type"": ""Button"",
+                    ""id"": ""2c372b38-7f94-4933-9ebe-f6dd24759184"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -57,6 +81,39 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
                     ""action"": ""Track2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a259364c-e97a-430a-858d-b2b07fd6f7e1"",
+                    ""path"": ""<Keyboard>/#(E)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Track3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3834f597-89d0-4d57-9641-23b471081fe3"",
+                    ""path"": ""<Keyboard>/#(R)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Track4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb881004-d2bd-47b0-953c-46933bf9854f"",
+                    ""path"": ""<Keyboard>/#(T)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Track5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -67,6 +124,9 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
         m_Default = asset.FindActionMap("Default", throwIfNotFound: true);
         m_Default_Track1 = m_Default.FindAction("Track1", throwIfNotFound: true);
         m_Default_Track2 = m_Default.FindAction("Track2", throwIfNotFound: true);
+        m_Default_Track3 = m_Default.FindAction("Track3", throwIfNotFound: true);
+        m_Default_Track4 = m_Default.FindAction("Track4", throwIfNotFound: true);
+        m_Default_Track5 = m_Default.FindAction("Track5", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -118,12 +178,18 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
     private IDefaultActions m_DefaultActionsCallbackInterface;
     private readonly InputAction m_Default_Track1;
     private readonly InputAction m_Default_Track2;
+    private readonly InputAction m_Default_Track3;
+    private readonly InputAction m_Default_Track4;
+    private readonly InputAction m_Default_Track5;
     public struct DefaultActions
     {
         private @PlayerInputsController m_Wrapper;
         public DefaultActions(@PlayerInputsController wrapper) { m_Wrapper = wrapper; }
         public InputAction @Track1 => m_Wrapper.m_Default_Track1;
         public InputAction @Track2 => m_Wrapper.m_Default_Track2;
+        public InputAction @Track3 => m_Wrapper.m_Default_Track3;
+        public InputAction @Track4 => m_Wrapper.m_Default_Track4;
+        public InputAction @Track5 => m_Wrapper.m_Default_Track5;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -139,6 +205,15 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
                 @Track2.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack2;
                 @Track2.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack2;
                 @Track2.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack2;
+                @Track3.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack3;
+                @Track3.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack3;
+                @Track3.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack3;
+                @Track4.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack4;
+                @Track4.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack4;
+                @Track4.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack4;
+                @Track5.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack5;
+                @Track5.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack5;
+                @Track5.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnTrack5;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -149,6 +224,15 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
                 @Track2.started += instance.OnTrack2;
                 @Track2.performed += instance.OnTrack2;
                 @Track2.canceled += instance.OnTrack2;
+                @Track3.started += instance.OnTrack3;
+                @Track3.performed += instance.OnTrack3;
+                @Track3.canceled += instance.OnTrack3;
+                @Track4.started += instance.OnTrack4;
+                @Track4.performed += instance.OnTrack4;
+                @Track4.canceled += instance.OnTrack4;
+                @Track5.started += instance.OnTrack5;
+                @Track5.performed += instance.OnTrack5;
+                @Track5.canceled += instance.OnTrack5;
             }
         }
     }
@@ -157,5 +241,8 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
     {
         void OnTrack1(InputAction.CallbackContext context);
         void OnTrack2(InputAction.CallbackContext context);
+        void OnTrack3(InputAction.CallbackContext context);
+        void OnTrack4(InputAction.CallbackContext context);
+        void OnTrack5(InputAction.CallbackContext context);
     }
 }

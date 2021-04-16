@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
+
+    /* Je pars du principe qu'il n'y aura jamais deux notes d'une même track en même temps sur la finish line
+     * Cependant sur des BPM très élevés on risque d'avoir le cas 
+     * Soit on reste sur des BPM pas SI élevés que ça
+     * Soit on peut réduire la taille de la barre
+     * Une solution plus générique prendrait plus de temps à réaliser
+     */
+
+
+    //Le GameObject parent qui contient toutes les tracks
     [SerializeField] private GameObject tracksContainer;
+
+    //Pour chaque track, stocke la note qui est en ce moment sur la finish line
+    //Si il n'y a pas de note, la valeur est mise à null
     public Dictionary<Track, Note> tracksStatus;
 
 

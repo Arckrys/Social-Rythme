@@ -49,6 +49,7 @@ public class Track : MonoBehaviour
         {
             var note = Instantiate(m_buttonPrefab, m_prefabOffset, gameObject.transform.rotation);
             note.transform.SetParent(transform);
+            note.GetComponent<Note>().ParentTrack = this;
         }
 
     }

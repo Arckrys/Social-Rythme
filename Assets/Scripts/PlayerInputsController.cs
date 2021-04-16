@@ -20,7 +20,7 @@ public class @PlayerInputsController : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Track1"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""caf72f65-ab29-41ec-9475-5ba9bf4e73fa"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

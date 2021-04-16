@@ -53,4 +53,15 @@ public class Track : MonoBehaviour
         }
 
     }
+
+    public void Activate()
+    {
+        m_activableScript.IsActivated = true;
+    }
+
+    public void Deactivate()
+    {
+        m_activableScript.IsActivated = false;
+
+    }
 }

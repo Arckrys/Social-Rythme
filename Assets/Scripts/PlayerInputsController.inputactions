@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Track1",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "caf72f65-ab29-41ec-9475-5ba9bf4e73fa",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -17,6 +17,30 @@
                     "name": "Track2",
                     "type": "Button",
                     "id": "749476cc-9198-438b-b5a6-96218b093239",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Track3",
+                    "type": "Button",
+                    "id": "967861c0-7802-44ea-b2a8-b57db1b1fc91",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Track4",
+                    "type": "Button",
+                    "id": "e0723d2a-9fea-4a7d-8ccc-eb9d63e26e37",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Track5",
+                    "type": "Button",
+                    "id": "2c372b38-7f94-4933-9ebe-f6dd24759184",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -42,6 +66,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Track2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a259364c-e97a-430a-858d-b2b07fd6f7e1",
+                    "path": "<Keyboard>/#(E)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Track3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3834f597-89d0-4d57-9641-23b471081fe3",
+                    "path": "<Keyboard>/#(R)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Track4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fb881004-d2bd-47b0-953c-46933bf9854f",
+                    "path": "<Keyboard>/#(T)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Track5",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

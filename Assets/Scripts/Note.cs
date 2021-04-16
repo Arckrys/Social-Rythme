@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
+    private Track m_parentTrack;
 
     private Vector3 m_direction;
 
     //A renseigner depuis l'éditeur
     [SerializeField] private float m_speed;
+
+    public Track ParentTrack { get => m_parentTrack; set => m_parentTrack = value; }
 
     void Start()
     {

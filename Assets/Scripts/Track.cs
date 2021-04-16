@@ -7,13 +7,22 @@ public class Track : MonoBehaviour
     // Est-ce que ce Track est activé au début du jeu ?
     [SerializeField] private bool m_isActivatedByDefault = false;
 
+    //Une note sera générée toute les m_frequency Beats
+    [SerializeField] private float m_frequency;
+
+    [SerializeField] public TrackData m_data;
+
+
+    private uint m_currentNumberOfBeats = 0;
+
+
     //Le prefab de la note qui sera placée sur le Track
     [SerializeField] private GameObject m_buttonPrefab;
     //L'offset de la note pour mieux la placer sur le Track
     private Vector3 m_prefabOffset;
 
     private Activable m_activableScript;
-    private bool IsActivated()
+    public bool IsActivated()
     {
         return m_activableScript.IsActivated;
     }
@@ -38,18 +47,44 @@ public class Track : MonoBehaviour
         m_prefabOffset.y += m_buttonPrefab.GetComponent<MeshRenderer>().bounds.max.y;
 
         //Quand OnBeat (voir BeatGenerator) est activé, la fonction GeneraNote est lancée
-        BeatGenerator.Instance.OnBeat += GenerateNote;
+        BeatGenerator.Instance.OnBeat += OnBeat;
 
     }
 
+    private void OnBeat(object sender, System.EventArgs e)
+    {
+        if (IsActivated())
+        {
+            m_currentNumberOfBeats++;
+            if(m_currentNumberOfBeats >= m_frequency)
+            {
+                m_currentNumberOfBeats = 0;
+                GenerateNote();
+            }
+        }
+    }
+
     //On instancie une note sur la track
-    private void GenerateNote(object sender, System.EventArgs e)
+    private void GenerateNote()
     {
         if (IsActivated())
         {
             var note = Instantiate(m_buttonPrefab, m_prefabOffset, gameObject.transform.rotation);
             note.transform.SetParent(transform);
+            note.GetComponent<Note>().ParentTrack = this;
         }
 
+    }
+
+    public void Activate()
+    {
+        m_data.Clear();
+        m_activableScript.IsActivated = true;
+    }
+
+    public void Deactivate()
+    {
+        m_activableScript.IsActivated = false;
+        m_data.Clear();
     }
 }

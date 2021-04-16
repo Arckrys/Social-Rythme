@@ -55,7 +55,7 @@ public class Activable : MonoBehaviour
 
     private IEnumerator ChangeColor(Color32 targetColor)
     {
-        //On retient la couleur actuelle du matériau au moment du changement de couleur
+        //On retient la couleur actuel du matériau au moment du changement de couleur
         //Note : cette couleur peut être différente de m_initialColor ou m_deactivatedColor
         //si ChangeColor a été re-appelé avant d'avoir eu le temps de se terminer
         Color32 initalColor = m_renderer.material.color;

@@ -10,6 +10,9 @@ public class Track : MonoBehaviour
     //Une note sera générée toute les m_frequency Beats
     [SerializeField] private float m_frequency;
 
+    [SerializeField] public TrackData m_data;
+
+
     private uint m_currentNumberOfBeats = 0;
 
 
@@ -19,7 +22,7 @@ public class Track : MonoBehaviour
     private Vector3 m_prefabOffset;
 
     private Activable m_activableScript;
-    private bool IsActivated()
+    public bool IsActivated()
     {
         return m_activableScript.IsActivated;
     }
@@ -75,12 +78,13 @@ public class Track : MonoBehaviour
 
     public void Activate()
     {
+        m_data.Clear();
         m_activableScript.IsActivated = true;
     }
 
     public void Deactivate()
     {
         m_activableScript.IsActivated = false;
-
+        m_data.Clear();
     }
 }

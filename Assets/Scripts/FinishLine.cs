@@ -70,6 +70,7 @@ public class FinishLine : MonoBehaviour
         if (other.gameObject.TryGetComponent(out Note note))
         {
             Debug.Log("Note left finish line");
+            TrackManager.Instance.Miss(note.ParentTrack);
             tracksStatus[note.ParentTrack] = null;
         }
     }
@@ -89,6 +90,7 @@ public class FinishLine : MonoBehaviour
             Debug.Log("Miss !");
 
         }
+        TrackManager.Instance.TrackPressed(track, res);
         return res;
     }
 }

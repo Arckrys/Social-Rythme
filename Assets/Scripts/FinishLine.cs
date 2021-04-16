@@ -90,6 +90,7 @@ public class FinishLine : MonoBehaviour
             Debug.Log("Miss !");
 
         }
+        //On communique l'information au TrackManager pour mettre à jour la jauge de la track concernée
         TrackManager.Instance.TrackPressed(track, res);
         return res;
     }

@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Ici on a une jauge qui se remplit quand on fait une bonne note et qui se vide quand on loupe une note
+// Si la jauge est assez remplie, alors TrackManager activera la prochaine track
+// Si on loupe trop de notes, alors TrackManager désactive cette track
+
+
+
 [System.Serializable]
 public class TrackData 
 {

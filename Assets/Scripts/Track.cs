@@ -7,6 +7,12 @@ public class Track : MonoBehaviour
     // Est-ce que ce Track est activé au début du jeu ?
     [SerializeField] private bool m_isActivatedByDefault = false;
 
+    //Une note sera générée toute les m_frequency Beats
+    [SerializeField] private float m_frequency;
+
+    private uint m_currentNumberOfBeats = 0;
+
+
     //Le prefab de la note qui sera placée sur le Track
     [SerializeField] private GameObject m_buttonPrefab;
     //L'offset de la note pour mieux la placer sur le Track
@@ -38,12 +44,25 @@ public class Track : MonoBehaviour
         m_prefabOffset.y += m_buttonPrefab.GetComponent<MeshRenderer>().bounds.max.y;
 
         //Quand OnBeat (voir BeatGenerator) est activé, la fonction GeneraNote est lancée
-        BeatGenerator.Instance.OnBeat += GenerateNote;
+        BeatGenerator.Instance.OnBeat += OnBeat;
 
     }
 
+    private void OnBeat(object sender, System.EventArgs e)
+    {
+        if (IsActivated())
+        {
+            m_currentNumberOfBeats++;
+            if(m_currentNumberOfBeats >= m_frequency)
+            {
+                m_currentNumberOfBeats = 0;
+                GenerateNote();
+            }
+        }
+    }
+
     //On instancie une note sur la track
-    private void GenerateNote(object sender, System.EventArgs e)
+    private void GenerateNote()
     {
         if (IsActivated())
         {

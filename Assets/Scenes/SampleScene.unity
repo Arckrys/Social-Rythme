@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1113996638}
     m_Modifications:
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_frequency
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_isActivatedByDefault
       value: 0
       objectReference: {fileID: 0}
@@ -215,6 +219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1113996638}
     m_Modifications:
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_frequency
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_isActivatedByDefault
       value: 0
@@ -482,6 +490,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1113996638}
     m_Modifications:
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_frequency
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_isActivatedByDefault
       value: 0
       objectReference: {fileID: 0}
@@ -687,6 +699,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1113996638}
     m_Modifications:
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_frequency
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_isActivatedByDefault
       value: 0
@@ -988,6 +1004,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1113996638}
     m_Modifications:
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_frequency
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_buttonPrefab
       value: 

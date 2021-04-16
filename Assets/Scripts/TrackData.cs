@@ -15,7 +15,7 @@ public class TrackData
     public float threshold;
     public float max;
     public float min;
-    private float currentValue = 0.0f;
+    public float currentValue = 0.0f;
     public bool WentUnderThreshold = false;
     public bool WentAboveThreshold = false;
 

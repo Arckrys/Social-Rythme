@@ -56,12 +56,12 @@ public class TrackManager : MonoBehaviour
     public void TrackPressed(Track track, bool res)
     {
         TrackData data = track.m_data;
-        if (track.IsActivated())
+        if (track.IsActivated() && (tracksStatus[m_currentIndex] == track))
         {
             if (res)   //On a réussie une note, alors on gagne un point dans la jauge correspondante à cette track
             {
                 data.Increase();
-                if (data.WentAboveThreshold)
+                if (data.WentAboveThreshold || (data.currentValue == data.max))
                 {
                     ActivateNextTrack();
                 }
@@ -69,14 +69,17 @@ public class TrackManager : MonoBehaviour
             }
             else  //On a loupé une note, alors on perd un point dans la jauge correspondante à cette track
             {
+                Debug.Log("Track " + tracksStatus.IndexOf(track) + " missed");
                 data.Decrease();
-                if (data.WentUnderThreshold)
+                if (data.WentUnderThreshold || (data.currentValue == data.min))
                 {
                     DeactivateCurrentTrack();
                 }
             }
+            Debug.Log("Track " + tracksStatus.IndexOf(track) + " value is " + data.currentValue);
+
         }
-        
+
     }
 
     //On active la prochaine track et on décale l'index

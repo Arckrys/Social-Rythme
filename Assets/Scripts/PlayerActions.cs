@@ -34,31 +34,31 @@ public class PlayerActions : MonoBehaviour
     //Cette fonction est appelée quand on appuie sur une touche bind à l'action Track1
     private void PressTrackOne()
     {
-        Debug.Log("Track one pressed");
+        //Debug.Log("Track one pressed");
         FinishLine.Instance.PressTrack(m_tracks[0]);
     }
 
     private void PressTrackTwo()
     {
-        Debug.Log("Track two pressed");
+        //Debug.Log("Track two pressed");
         FinishLine.Instance.PressTrack(m_tracks[1]);
     }
 
     private void PressTrackThree()
     {
-        Debug.Log("Track three pressed");
+        //Debug.Log("Track three pressed");
         FinishLine.Instance.PressTrack(m_tracks[2]);
     }
 
     private void PressTrackFour()
     {
-        Debug.Log("Track four pressed");
+        //Debug.Log("Track four pressed");
         FinishLine.Instance.PressTrack(m_tracks[3]);
     }
 
     private void PressTrackFive()
     {
-        Debug.Log("Track five pressed");
+        //Debug.Log("Track five pressed");
         FinishLine.Instance.PressTrack(m_tracks[4]);
     }
 

@@ -59,7 +59,7 @@ public class FinishLine : MonoBehaviour
     {
         if(other.gameObject.TryGetComponent(out Note note))
         {
-            Debug.Log("Note entered finish line");
+            //Debug.Log("Note entered finish line");
             tracksStatus[note.ParentTrack] = note;
         }
     }
@@ -69,7 +69,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out Note note))
         {
-            Debug.Log("Note left finish line");
+            //Debug.Log("Note left finish line");
             TrackManager.Instance.Miss(note.ParentTrack);
             tracksStatus[note.ParentTrack] = null;
         }
@@ -81,13 +81,10 @@ public class FinishLine : MonoBehaviour
         bool res = (noteContained != null);
         if (res) // CORRECT
         {
-            Debug.Log("Correct !");
             Destroy(noteContained.gameObject);
-
 
         } else // MISS
         {
-            Debug.Log("Miss !");
 
         }
         //On communique l'information au TrackManager pour mettre à jour la jauge de la track concernée

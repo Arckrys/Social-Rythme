@@ -14,8 +14,6 @@ public class BeatGenerator : MonoBehaviour
     //Le timeStamp correspondant au prochain appel de OnBeat
     private float m_nextBeat;
 
-
-
     /* SINGLETON */
     public static BeatGenerator Instance;
     void Awake()

@@ -22,10 +22,8 @@ public class Track : MonoBehaviour
     private Vector3 m_prefabOffset;
 
     private Activable m_activableScript;
-    public bool IsActivated()
-    {
-        return m_activableScript.IsActivated;
-    }
+    public bool IsActivated => m_activableScript.IsActivated;
+
 
     private MeshRenderer m_renderer;
 
@@ -53,7 +51,7 @@ public class Track : MonoBehaviour
 
     private void OnBeat(object sender, System.EventArgs e)
     {
-        if (IsActivated())
+        if (IsActivated)
         {
             m_currentNumberOfBeats++;
             if(m_currentNumberOfBeats >= m_frequency)
@@ -67,7 +65,7 @@ public class Track : MonoBehaviour
     //On instancie une note sur la track
     private void GenerateNote()
     {
-        if (IsActivated())
+        if (IsActivated)
         {
             var note = Instantiate(m_buttonPrefab, m_prefabOffset, gameObject.transform.rotation);
             note.transform.SetParent(transform);

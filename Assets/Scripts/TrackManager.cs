@@ -12,17 +12,36 @@ public class TrackManager : MonoBehaviour
     //Le GameObject parent qui contient toutes les tracks
     [SerializeField] private GameObject tracksContainer;
 
+    //Le GameObject parent qui contient toutes les tracks
+    [SerializeField] private float m_globalThreshold;
+     private float m_currentValue = 5.0f;
+    public float CurrentValue
+    {
+        get => m_currentValue;
+        set
+        {
+            Debug.Log("m_currentValue" + m_currentValue);
+            m_currentValue = Mathf.Max(0,value);
+            if(m_currentValue >= m_globalThreshold)
+            {
+                m_currentValue = 5.0f;
+                ActivateNextTrack();
+
+            } 
+        }
+    }
+
+
     //La liste des tracks
     private List<Track> tracksStatus;
-
-    //La track la plus avancée actuellement activée
-    private int m_currentIndex;
 
     //Le nombre max de tracks 
     private int m_maxIndex;
 
     /* SINGLETON */
     public static TrackManager Instance;
+
+
     void Awake()
     {
         if (Instance == null)
@@ -41,7 +60,7 @@ public class TrackManager : MonoBehaviour
     void Start()
     {
         tracksStatus = new List<Track>(tracksContainer.GetComponentsInChildren<Track>());
-        m_currentIndex = 0;
+        CurrentValue = 5.0f;
         m_maxIndex = tracksStatus.Count;
 
 
@@ -56,27 +75,31 @@ public class TrackManager : MonoBehaviour
     public void TrackPressed(Track track, bool res)
     {
         TrackData data = track.m_data;
-        if (track.IsActivated() && (tracksStatus[m_currentIndex] == track))
+        if (track.IsActivated )
         {
+
             if (res)   //On a réussie une note, alors on gagne un point dans la jauge correspondante à cette track
             {
                 data.Increase();
-                if (data.WentAboveThreshold || (data.currentValue == data.max))
+                CurrentValue++;
+
+                /*
+                if (data.WentAboveThreshold )
                 {
                     ActivateNextTrack();
-                }
+                }*/
 
             }
             else  //On a loupé une note, alors on perd un point dans la jauge correspondante à cette track
             {
                 Debug.Log("Track " + tracksStatus.IndexOf(track) + " missed");
+                CurrentValue--;
                 data.Decrease();
-                if (data.WentUnderThreshold || (data.currentValue == data.min))
+                if ((data.CurrentValue == data.min))
                 {
-                    DeactivateCurrentTrack();
+                    DeactivateCurrentTrack(track);
                 }
             }
-            Debug.Log("Track " + tracksStatus.IndexOf(track) + " value is " + data.currentValue);
 
         }
 
@@ -85,20 +108,25 @@ public class TrackManager : MonoBehaviour
     //On active la prochaine track et on décale l'index
     private void ActivateNextTrack()
     {
-        if (m_currentIndex < m_maxIndex)
+        for(int i = 0; i <tracksStatus.Count; i++)
         {
-            m_currentIndex++;
-            tracksStatus[m_currentIndex].Activate();
+            Track track = tracksStatus[i];
+            if (!track.IsActivated)
+            {
+                track.Activate();
+                break;
+            }
         }
     }
 
     //On désactive la track la plus avancée et on décale l'index
-    private void DeactivateCurrentTrack()
+    private void DeactivateCurrentTrack(Track track)
     {
-        if (m_currentIndex != 0)
+        int index = tracksStatus.IndexOf(track);
+        if (index != 0)
         {
-            tracksStatus[m_currentIndex].Deactivate();
-            m_currentIndex--;
+            Debug.Log("Désactive " + index);
+            tracksStatus[index].Deactivate();
         }
     }
 }

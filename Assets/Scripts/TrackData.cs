@@ -19,6 +19,8 @@ public class TrackData
     public bool WentUnderThreshold = false;
     public bool WentAboveThreshold = false;
 
+    public float CurrentValue { get => currentValue;  }
+
     public void Clear()
     {
         currentValue = 0.0f;
@@ -26,15 +28,15 @@ public class TrackData
 
     public void Decrease()
     {
-        var oldValue = currentValue;
-        currentValue = Mathf.Max(min, currentValue - 1);
-        WentUnderThreshold = (oldValue >= threshold && currentValue < threshold);
+        var oldValue = CurrentValue;
+        currentValue = Mathf.Max(min, CurrentValue - 1);
+        WentUnderThreshold = (oldValue >= threshold && CurrentValue < threshold);
     }
 
     public void Increase()
     {
-        var oldValue = currentValue;
-        currentValue = Mathf.Min(currentValue + 1, max);
-        WentAboveThreshold = (oldValue < threshold && currentValue >= threshold);
+        var oldValue = CurrentValue;
+        currentValue = Mathf.Min(CurrentValue + 1, max);
+        WentAboveThreshold = (oldValue < threshold && CurrentValue >= threshold);
     }
 }

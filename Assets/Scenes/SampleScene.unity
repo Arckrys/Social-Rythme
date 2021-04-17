@@ -1060,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8520623643812377400, guid: 6328e70dc15b36d4491cc20dcae343d5, type: 3}
       propertyPath: Bpm
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6328e70dc15b36d4491cc20dcae343d5, type: 3}

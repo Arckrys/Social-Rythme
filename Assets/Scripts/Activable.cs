@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Activable : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Activable : MonoBehaviour
     [SerializeField] private float m_delay;
 
     private MeshRenderer m_renderer;
+    private TextMeshPro letter_mesh;
 
 
     public bool IsActivated { get => m_isActivated;
@@ -31,11 +33,14 @@ public class Activable : MonoBehaviour
 
     void Awake()
     {
+        letter_mesh = GetComponentInChildren<TextMeshPro>();
+
         if (TryGetComponent(out m_renderer)){
             m_initialColor = m_renderer.material.color;
             //La couleur désactivée correspond à 0.2 x la couleur initiale + 0.8x le filtre de désactivation
             m_deactivatedColor = Color32.Lerp(m_initialColor, m_deactivatedFilter, 0.8f);
             IsActivated = false;
+            
         } else
         {
             this.enabled = false;
@@ -66,6 +71,7 @@ public class Activable : MonoBehaviour
         {
             //Interpolation linéaire entre la couleur de départ et la couleur cible
             m_renderer.material.color = Color32.Lerp(initalColor, targetColor, elapsedTime / m_delay);
+            letter_mesh.color = Color32.Lerp(initalColor, targetColor, elapsedTime / m_delay);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

@@ -125,4 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9104a7fa5a7394891ee27c5ef0616c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_isActivatedByDefault: 1
+  m_frequency: 1
+  m_data:
+    threshold: 3
+    max: 10
+    min: 0
+    currentValue: 0
+    WentUnderThreshold: 0
+    WentAboveThreshold: 0
   m_buttonPrefab: {fileID: 9070786230177062553, guid: f7162ce17a6b39b40aef80317122937b, type: 3}

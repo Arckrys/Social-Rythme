@@ -143,6 +143,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_buttonPrefab
+      value: 
+      objectReference: {fileID: 8488226170500596561, guid: cada29bbab35a3a40830b4b9a20420fc, type: 3}
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
       value: 3
       objectReference: {fileID: 0}
@@ -320,6 +324,10 @@ PrefabInstance:
       propertyPath: m_frequency
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_buttonPrefab
+      value: 
+      objectReference: {fileID: 8488226170500596561, guid: 225de90ceb432534aa8774b44945a8e4, type: 3}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
       value: 3
@@ -871,6 +879,10 @@ PrefabInstance:
       propertyPath: m_frequency
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_buttonPrefab
+      value: 
+      objectReference: {fileID: 8488226170500596561, guid: 2b0599b45029eb74082a25a65d5eed6e, type: 3}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
       value: 3
@@ -1613,6 +1625,10 @@ PrefabInstance:
       propertyPath: m_frequency
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
+      propertyPath: m_buttonPrefab
+      value: 
+      objectReference: {fileID: 8488226170500596561, guid: cdbc5997d4aaec641873619eabf9283b, type: 3}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
       value: 5

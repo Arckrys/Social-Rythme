@@ -20,7 +20,7 @@ public class TrackManager : MonoBehaviour
         get => m_currentValue;
         set
         {
-            Debug.Log("m_currentValue " + m_currentValue);
+            //Debug.Log("m_currentValue " + m_currentValue);
             m_currentValue = Mathf.Max(0,value);
             if(m_currentValue >= m_globalThreshold)
             {
@@ -93,7 +93,7 @@ public class TrackManager : MonoBehaviour
             }
             else  //On a loupé une note, alors on perd un point dans la jauge correspondante à cette track
             {
-                Debug.Log("Track " + tracksStatus.IndexOf(track) + " missed");
+                //Debug.Log("Track " + tracksStatus.IndexOf(track) + " missed");
                 CurrentValue--;
                 data.Decrease();
                 if ((data.CurrentValue == data.min))

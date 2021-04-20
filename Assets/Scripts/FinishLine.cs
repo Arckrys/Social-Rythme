@@ -81,7 +81,8 @@ public class FinishLine : MonoBehaviour
         bool res = (noteContained != null);
         if (res) // CORRECT
         {
-            Destroy(noteContained.gameObject);
+            noteContained.Validate();
+            tracksStatus[track] = null;
 
         } else // MISS
         {

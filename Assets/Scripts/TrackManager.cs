@@ -20,7 +20,7 @@ public class TrackManager : MonoBehaviour
         get => m_currentValue;
         set
         {
-            Debug.Log("m_currentValue" + m_currentValue);
+            Debug.Log("m_currentValue " + m_currentValue);
             m_currentValue = Mathf.Max(0,value);
             if(m_currentValue >= m_globalThreshold)
             {

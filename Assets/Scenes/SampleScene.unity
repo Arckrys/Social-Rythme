@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_frequency
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_frequency
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
@@ -692,7 +692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_frequency
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
@@ -1421,7 +1421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_frequency
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_data.threshold
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracksContainer: {fileID: 1113996637}
-  m_globalThreshold: 50
+  m_globalThreshold: 30
 --- !u!82 &2060542119
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2022,7 +2022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_frequency
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5096929833566086394, guid: a03baebee17122f45a3a342c921e2290, type: 3}
       propertyPath: m_buttonPrefab

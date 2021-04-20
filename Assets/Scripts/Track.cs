@@ -77,6 +77,7 @@ public class Track : MonoBehaviour
     public void Activate()
     {
         m_data.Clear();
+        m_data.CurrentValue = 5;
         m_activableScript.IsActivated = true;
     }
 

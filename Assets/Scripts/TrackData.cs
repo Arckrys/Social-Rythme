@@ -19,7 +19,7 @@ public class TrackData
     public bool WentUnderThreshold = false;
     public bool WentAboveThreshold = false;
 
-    public float CurrentValue { get => currentValue;  }
+    public float CurrentValue { get => currentValue; set => currentValue = value; }
 
     public void Clear()
     {

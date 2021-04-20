@@ -24,7 +24,7 @@ public class BeatGenerator : MonoBehaviour
         {
             Instance = this;
             //SceneManager.sceneLoaded += OnSceneLoaded;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {

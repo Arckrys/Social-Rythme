@@ -47,7 +47,7 @@ public class TrackManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -59,6 +59,7 @@ public class TrackManager : MonoBehaviour
 
     void Start()
     {
+        tracksContainer = FindObjectOfType<TracksContainer>().gameObject;
         tracksStatus = new List<Track>(tracksContainer.GetComponentsInChildren<Track>());
         CurrentValue = 5.0f;
         m_maxIndex = tracksStatus.Count;

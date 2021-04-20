@@ -7,9 +7,13 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] List<Track> m_tracks;
     private PlayerInputsController m_playerInputsController;
 
+    //Le GameObject parent qui contient toutes les tracks
+    [SerializeField] private GameObject tracksContainer;
+
     private void Awake()
     {
         m_playerInputsController = new PlayerInputsController();
+
     }
 
     private void OnEnable()
@@ -24,6 +28,9 @@ public class PlayerActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tracksContainer = FindObjectOfType<TracksContainer>().gameObject;
+
+
         m_playerInputsController.Default.Track1.started += ctx => PressTrackOne();
         m_playerInputsController.Default.Track2.started += ctx => PressTrackTwo();
         m_playerInputsController.Default.Track3.started += ctx => PressTrackThree();
@@ -35,31 +42,31 @@ public class PlayerActions : MonoBehaviour
     private void PressTrackOne()
     {
         //Debug.Log("Track one pressed");
-        FinishLine.Instance.PressTrack(m_tracks[0]);
+        FinishLine.Instance.PressTrack(tracksContainer.transform.GetChild(0).GetComponent<Track>());
     }
 
     private void PressTrackTwo()
     {
         //Debug.Log("Track two pressed");
-        FinishLine.Instance.PressTrack(m_tracks[1]);
+        FinishLine.Instance.PressTrack(tracksContainer.transform.GetChild(1).GetComponent<Track>());
     }
 
     private void PressTrackThree()
     {
         //Debug.Log("Track three pressed");
-        FinishLine.Instance.PressTrack(m_tracks[2]);
+        FinishLine.Instance.PressTrack(tracksContainer.transform.GetChild(2).GetComponent<Track>());
     }
 
     private void PressTrackFour()
     {
         //Debug.Log("Track four pressed");
-        FinishLine.Instance.PressTrack(m_tracks[3]);
+        FinishLine.Instance.PressTrack(tracksContainer.transform.GetChild(3).GetComponent<Track>());
     }
 
     private void PressTrackFive()
     {
         //Debug.Log("Track five pressed");
-        FinishLine.Instance.PressTrack(m_tracks[4]);
+        FinishLine.Instance.PressTrack(tracksContainer.transform.GetChild(4).GetComponent<Track>());
     }
 
 }

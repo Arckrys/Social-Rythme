@@ -57,6 +57,18 @@ public class Note : MonoBehaviour
         m_audioSource.Play();
         m_collider.enabled = false;
         m_renderer.enabled = false;
+
+        var childrenRenderer = GetComponentsInChildren<Renderer>();
+        foreach(Renderer renderer in childrenRenderer)
+        {
+            renderer.enabled = false;
+        }
+
+        var childrenCollider = GetComponentsInChildren<BoxCollider>();
+        foreach (BoxCollider collider in childrenCollider)
+        {
+            collider.enabled = false;
+        }
         Destroy(gameObject, m_audioSource.clip.length);
     }
 }

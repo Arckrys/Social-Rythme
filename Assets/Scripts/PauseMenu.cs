@@ -7,9 +7,16 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
 
+    private AudioSource audio;
+
     public bool gamePaused = false;
 
     // Update is called once per frame
+    private void Awake()
+    {
+        audio = BeatGenerator.Instance.gameObject.GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -18,7 +25,7 @@ public class PauseMenu : MonoBehaviour
             if (gamePaused)
             {
                 Time.timeScale = 0f;
-                pauseMenuUI.SetActive(true);
+                Pause();
             }
             else
             {
@@ -32,8 +39,15 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
     }
 
+    void Pause()
+    {
+        audio.Pause();
+        pauseMenuUI.SetActive(true);
+    }
+
     public void Resume()
     {
+        audio.UnPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gamePaused = false;

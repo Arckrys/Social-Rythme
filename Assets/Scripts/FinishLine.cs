@@ -1,15 +1,16 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FinishLine : MonoBehaviour
 {
 
-    /* Je pars du principe qu'il n'y aura jamais deux notes d'une même track en même temps sur la finish line
-     * Cependant sur des BPM très élevés on risque d'avoir le cas 
-     * Soit on reste sur des BPM pas SI élevés que ça
-     * Soit on peut réduire la taille de la barre
-     * Une solution plus générique prendrait plus de temps à réaliser
+    /* Je pars du principe qu'il n'y aura jamais deux notes d'une mÃªme track en mÃªme temps sur la finish line
+     * Cependant sur des BPM trÃ¨s Ã©levÃ©s on risque d'avoir le cas 
+     * Soit on reste sur des BPM pas SI Ã©levÃ©s que Ã§a
+     * Soit on peut rÃ©duire la taille de la barre
+     * Une solution plus gÃ©nÃ©rique prendrait plus de temps Ã  rÃ©aliser
      */
 
 
@@ -17,9 +18,13 @@ public class FinishLine : MonoBehaviour
     [SerializeField] private GameObject tracksContainer;
 
     //Pour chaque track, stocke la note qui est en ce moment sur la finish line
-    //Si il n'y a pas de note, la valeur est mise à null
+    //Si il n'y a pas de note, la valeur est mise Ã  null
     public Dictionary<Track, Note> tracksStatus;
 
+    //Sale mais suffisant pour le proto 
+    //Score qui sera affichï¿½ en jeu
+    private int score = 0;
+    private TMP_Text scoreText;
 
     /* SINGLETON */
     public static FinishLine Instance;
@@ -40,6 +45,7 @@ public class FinishLine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
         tracksStatus = new Dictionary<Track, Note>();
         var tracks = tracksContainer.GetComponentsInChildren<Track>();
         foreach(Track track in tracks)
@@ -83,13 +89,19 @@ public class FinishLine : MonoBehaviour
         {
             noteContained.Validate();
             tracksStatus[track] = null;
+            score += 50;
+            UpdateScore();
 
         } else // MISS
         {
 
         }
-        //On communique l'information au TrackManager pour mettre à jour la jauge de la track concernée
+        //On communique l'information au TrackManager pour mettre Ã  jour la jauge de la track concernÃ©e
         TrackManager.Instance.TrackPressed(track, res);
         return res;
+    }
+    private void UpdateScore()
+    {
+        scoreText.text = "Score : " + score;
     }
 }

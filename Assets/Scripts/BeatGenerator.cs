@@ -6,7 +6,7 @@ using UnityEngine;
 public class BeatGenerator : MonoBehaviour
 {
     //Le BPM général de la musique utilisée
-    [SerializeField] float Bpm;
+    [SerializeField] public float Bpm;
 
     //Cet event est appelé à chaque Beat , donc toutes les 60/BPM secondes
     public event EventHandler OnBeat;
